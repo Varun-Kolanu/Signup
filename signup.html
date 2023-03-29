@@ -111,7 +111,8 @@
             let cpwd = document.forms["form"]["cpwd"].value;
             if(pwd.length <8)
             {
-                seterror(4, "*Password should contain more than 8 digits!")
+                seterror(4, "*Password should contain more than 8 digits!");
+                returnval = false;
             }
             console.log(pwd);
             console.log(cpwd);
@@ -119,6 +120,12 @@
             {
                 seterror(5, "*Passwords don't match!");
                 returnval=false;
+            }
+
+            let check = document.forms["form"]["terms"].checked;
+            if(check == false)
+            {
+                returnval = false;
             }
             return returnval
         }
