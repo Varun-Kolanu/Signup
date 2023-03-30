@@ -167,7 +167,7 @@
             let pwdsmall = /[a-z]/g;
             let pwdnum = /[0-9]/g;
             if (((pwdnum.test(pwdvalue)) && (pwdspecial.test(pwdvalue)) && (pwdcap.test(pwdvalue)) && (pwdsmall.test(pwdvalue))) == false) {
-                seterror(4, "*Password must have atleast one special character, one capital, one small and one numeric !");
+                seterror(4, "*Password must have atleast one special character, one uppercse, one lowercase and one numeric !");
                 returnval = false;
             }
 
