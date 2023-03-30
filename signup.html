@@ -57,11 +57,13 @@
                 </div>
                 <div class="formError ml-3 text-[0.65rem] text-red-500"></div>
 
-                <div class="pwd flex items-center border-b-2 border-b-gray-400 focus:bg-blue-100 transition-colors duration-500 hover:rounded-md hover:border-b-blue-700 relative mt-1">
+                <div
+                    class="pwd flex items-center border-b-2 border-b-gray-400 focus:bg-blue-100 transition-colors duration-500 hover:rounded-md hover:border-b-blue-700 relative mt-1">
                     <input type="password" name="cpwd" id="cpwd" placeholder="Enter Password"
                         class="text-xs sm:text-sm md:text-md px-2 py-1 ml-0 mb-0 pb-0 border-b-2 m-4 h-8 w-[100%] focus:outline-none bg-gray-100 "
                         required>
-                    <i class="fas fa-eye-slash text-lg relative top-2 right-2 z-10" id="eye2"></i></div>
+                    <i class="fas fa-eye-slash text-lg relative top-2 right-2 z-10" id="eye2"></i>
+                </div>
                 <div class="formError ml-3 text-[0.65rem] text-red-500 "></div>
 
                 <div id="checkbox" class="mt-6">
@@ -88,47 +90,47 @@
     </div>
 
     <script>
+        let errors = 0;
         let pwd = document.getElementById("password");
         let cpwd = document.getElementById("cpwd");
         pwd.type = "password";
         cpwd.type = "password";
 
         let eye1 = document.getElementById("eye1");
-        eye1.addEventListener("click", ()=>
-        {
+        eye1.addEventListener("click", () => {
             if (pwd.type == "password") {
                 pwd.type = "text";
-                eye1.classList.remove("fas","fa-eye-slash");
-                eye1.classList.add("fas","fa-eye");
+                eye1.classList.remove("fas", "fa-eye-slash");
+                eye1.classList.add("fas", "fa-eye");
             }
             else {
                 pwd.type = "password";
-                eye1.classList.remove("fas","fa-eye");
-                eye1.classList.add("fas","fa-eye-slash");
+                eye1.classList.remove("fas", "fa-eye");
+                eye1.classList.add("fas", "fa-eye-slash");
             }
-            
+
         })
 
         let eye2 = document.getElementById("eye2");
-        eye2.addEventListener("click", ()=>
-        {
+        eye2.addEventListener("click", () => {
             if (cpwd.type == "password") {
                 cpwd.type = "text";
-                eye2.classList.remove("fas","fa-eye-slash");
-                eye2.classList.add("fas","fa-eye");
+                eye2.classList.remove("fas", "fa-eye-slash");
+                eye2.classList.add("fas", "fa-eye");
             }
             else {
                 cpwd.type = "password";
-                eye2.classList.remove("fas","fa-eye");
-                eye2.classList.add("fas","fa-eye-slash");
+                eye2.classList.remove("fas", "fa-eye");
+                eye2.classList.add("fas", "fa-eye-slash");
             }
-            
+
         })
         function clearErrors() {
             let error = document.getElementsByClassName("formError");
             for (let errors of error) {
                 errors.innerHTML = "";
             }
+            errors=0;
         }
         function seterror(i, err) {
             document.getElementsByClassName('formError')[i].innerHTML = err;
@@ -145,10 +147,12 @@
             if (name.match(pattname) == null) {
                 seterror(0, "*Name can't be empty!");
                 returnval = false;
+                errors++;
             }
-            if (name.match(pattnum) != null) {
+            else if (name.match(pattnum) != null) {
                 seterror(0, "*Name can't contain numbers!");
                 returnval = false;
+                errors++;
             }
 
             let username = document.forms["form"]["username"].value;
@@ -156,6 +160,7 @@
             if (username.match(pattspace) != null) {
                 seterror(1, "*Username can't contain spaces!");
                 returnval = false;
+                errors++;
             }
 
             let phone = document.forms["form"]["phone"].value;
@@ -163,10 +168,12 @@
             if (phone.match(pattphone) != null) {
                 seterror(3, "*Mobile number should only contain numeric values!");
                 returnval = false;
+                errors++;
             }
             else if (phone.length != 10) {
                 seterror(3, "*Mobile no. should contain 10 digits!");
                 returnval = false;
+                errors++;
             }
 
             let pwdvalue = document.forms["form"]["password"].value;
@@ -176,27 +183,31 @@
             let pwdcap = /[A-Z]/g;
             let pwdsmall = /[a-z]/g;
             let pwdnum = /[0-9]/g;
-            if (((pwdnum.test(pwdvalue)) && (pwdspecial.test(pwdvalue)) && (pwdcap.test(pwdvalue)) && (pwdsmall.test(pwdvalue))) == false) {
-                seterror(4, "*Password must have atleast one special character, one uppercase, one lowercase and one numeric !");
-                returnval = false;
-            }
-
             if (pwd.length < 8) {
                 seterror(4, "*Password should contain atleast 8 digits!");
                 returnval = false;
+                errors++;
             }
+            else if (((pwdnum.test(pwdvalue)) && (pwdspecial.test(pwdvalue)) && (pwdcap.test(pwdvalue)) && (pwdsmall.test(pwdvalue))) == false) {
+                seterror(4, "*Password must have atleast one special character, one uppercase, one lowercase and one numeric !");
+                returnval = false;
+                errors++;
+            }
+
+            
             if (pwdvalue != cpwdvalue) {
                 console.log("Noooo");
                 seterror(5, "*Passwords don't match!");
                 returnval = false;
+                errors++;
             }
 
             let check = document.forms["form"]["terms"].checked;
             let termbox = document.getElementById("terms");
             let box = document.getElementById("alert");
-            if (check == false) {
+            if (check == false && errors == 0) {
                 box.classList.add("border-2", "border-red-600");
-                alert("Please agree to the Terms and Conditions")
+                alert("Please agree to the Terms and Conditions");
                 returnval = false;
             }
             else {
