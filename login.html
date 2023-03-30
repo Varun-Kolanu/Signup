@@ -10,6 +10,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/5a360170f9.js" crossorigin="anonymous"></script>
+
 </head>
 
 <body class="m-0 p-0" style="font-family: 'Ubuntu', sans-serif;">
@@ -31,11 +33,13 @@
                     class="text-xs sm:text-sm md:text-md px-2 py-1 ml-0 border-b-2 border-b-gray-400 w-full m-4 h-8 mt-6 hover:border-b-2 hover:border-b-blue-700 focus:outline-none focus:border-blue-700 focus:bg-blue-100 transition-colors duration-500 hover:rounded-md focus:rounded-md bg-gray-100  "
                     required>
 
+                <div class="pwd flex items-center border-b-2 border-b-gray-400 focus:bg-blue-100 transition-colors duration-500 hover:rounded-md hover:border-b-blue-700">
                 <input type="password" name="password" id="password" placeholder="Enter Password"
-                    class="text-xs sm:text-sm md:text-md px-2 py-1 ml-0 border-b-2  border-b-gray-400 m-4 h-8 w-full hover:border-b-2 hover:border-b-blue-700 focus:outline-none focus:border-blue-700 focus:bg-blue-100 transition-colors duration-500 hover:rounded-md focus:rounded-md bg-gray-100 "
+                    class="text-xs sm:text-sm md:text-md px-2 py-1 ml-0 mb-0 pb-0 border-b-2 m-4 h-8 w-[100%] focus:outline-none bg-gray-100 "
                     required>
+                <i class="fas fa-eye-slash text-lg relative top-2 right-2 z-10" id="eye"></i></div>
 
-                <a href="/forgot" class="text-blue-600   text-xs relative left-3 inline">Forgot Password?</a>
+                <a href="/forgot" class="text-blue-600 text-xs relative left-3 inline mt-2">Forgot Password?</a>
 
                 <button type="submit"
                 class="m-5 mb-7 w-[150px] px-4 pt-1 pb-2 outline-none shadow-md shadow-gray-500 cursor-pointer relative left-14 lg:left-20 rounded-xl hover:scale-110 transition-transform duration-500 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white">Login</button>
@@ -46,6 +50,25 @@
                     class="text-blue-500  ">Sign Up</a> </p>
         </div>
     </div>
+
+    <script>
+        let eye = document.getElementById("eye");
+        let pwd = document.getElementById("password");
+        eye.addEventListener("click", ()=>
+        {
+            if (pwd.type == "password") {
+                pwd.type = "text";
+                eye.classList.remove("fas","fa-eye-slash");
+                eye.classList.add("fas","fa-eye");
+            }
+            else {
+                pwd.type = "password";
+                eye.classList.remove("fas","fa-eye");
+                eye.classList.add("fas","fa-eye-slash");
+            }
+            
+        })
+    </script>
 
 </body>
 
