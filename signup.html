@@ -149,7 +149,7 @@
                 returnval = false;
                 errors++;
             }
-            else if (name.match(pattnum) != null) {
+            if (name.match(pattnum) != null) {
                 seterror(0, "*Name can't contain numbers!");
                 returnval = false;
                 errors++;
