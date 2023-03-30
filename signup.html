@@ -58,8 +58,8 @@
 
 
                 <div id="checkbox" class="mt-4 ml-2">
-                    <span id="alert">
-                        <input type="checkbox" name="terms" id="terms" class="w-5 m-0 relative" checked>
+                    <span id="alert" class="m-1 -pr-2">
+                        <input type="checkbox" name="terms" id="terms" class="w-5 m-0 relative left-[1px] top-[0.5px]" checked>
                     </span>
                     <span class="text-xs">
                         I agree to
@@ -130,14 +130,12 @@
             let termbox = document.getElementById("terms");
             let box = document.getElementById("alert");
             if (check == false) {
-                box.classList.add("border-2", "border-red-600", "m-1", "-pr-2");
-                termbox.classList.add("left-[1px]", "top-[0.5px]")
+                box.classList.add("border-2", "border-red-600");
                 returnval = false;
             }
             else
             {
-                box.classList.remove("border-2","border-red-600", "m-1","-pr-2");
-                termbox.classList.remove("lef-[1px]", "top-[0.5px]");
+                box.classList.remove("border-2","border-red-600");
             }
             return returnval
         }
