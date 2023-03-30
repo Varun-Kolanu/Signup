@@ -13,3 +13,6 @@ Form Validations put:
 6. Mobile no. can't have any digits other than numeric
 7. Password should have atleast one numeric, one lowercase, one uppercase, one special character.
 8. Password should be atleast 8 digits long
+
+Features:
+Toggling show password with an eye
