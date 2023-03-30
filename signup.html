@@ -18,48 +18,57 @@
         style="background: url('./bg.jpeg') no-repeat center center/cover;">
 
         <div id="formdiv"
-            class="drop-shadow-2xl flex flex-col justify-center items-center w-[22rem] sm:w-[25rem] md:w-[28rem] lg:w-[32rem]  rounded-[35px] bg-gray-100">
+            class="drop-shadow-2xl flex flex-col justify-center items-center w-[23rem] md:w-[28rem] lg:w-[32rem]  rounded-[35px] bg-gray-100 ">
 
             <img src="./logo.jpg" alt="pRe-Love"
-                class="w-24 h-24 rounded-[40%] sm:w-26 sm:h-26 lg:w-35 lg:h-35 p-1 mt-2 -mb-1">
+                class="w-24 h-24 rounded-[40%] sm:w-26 sm:h-26 lg:w-35 lg:h-35 p-1 mt-2 -mb-1 ">
             <h1 class="my-2   text-[2rem] lg:text-[2.5rem]">Sign up</h1>
 
             <form action="/backend.js" name="form" id="form" onsubmit="return validateForm()"
-                class="mr-20 lg:mr-32 flex flex-col relative bottom-5" method="post">
+                class="form  flex flex-col relative bottom-5 w-[280px] md:w-[300px] lg:w-[350px]" method="post">
 
                 <input type="text" name="name" id="name" placeholder="Name"
-                    class="text-xs sm:text-sm md:text-md px-2 py-1 ml-2 border-b-2 border-b-gray-400 w-[130%] lg:w-[150%] m-4 h-8 mt-6 hover:border-b-2 hover:border-b-blue-700 focus:outline-none focus:border-blue-700 focus:bg-blue-100 transition-colors duration-500 hover:rounded-md focus:rounded-md bg-gray-100  "
+                    class="text-xs sm:text-sm md:text-md px-2 py-1 ml-0 border-b-2 border-b-gray-400 w-full m-4 h-8 mt-6 hover:border-b-2 hover:border-b-blue-700 focus:outline-none focus:border-blue-700 focus:bg-blue-100 transition-colors duration-500 hover:rounded-md focus:rounded-md bg-gray-100  "
                     required>
-                <div class="formError ml-3 text-xs -mt-4 text-red-500 "></div>
+                <div class="formError ml-3 text-[0.65rem] -mt-4 text-red-500 "></div>
 
                 <input type="text" name="username" id="username" placeholder="Username"
-                    class="text-xs sm:text-sm md:text-md px-2 py-1 ml-2 border-b-2  border-b-gray-400 m-4 h-8 w-[130%] lg:w-[150%] hover:border-b-2 hover:border-b-blue-700 focus:outline-none focus:border-blue-700 focus:bg-blue-100 transition-colors duration-500 hover:rounded-md focus:rounded-md bg-gray-100 "
+                    class="text-xs sm:text-sm md:text-md px-2 py-1 ml-0 border-b-2  border-b-gray-400 m-4 h-8 w-full hover:border-b-2 hover:border-b-blue-700 focus:outline-none focus:border-blue-700 focus:bg-blue-100 transition-colors duration-500 hover:rounded-md focus:rounded-md bg-gray-100 "
                     required>
-                <div class="formError   ml-3 -mt-4 text-xs text-red-500 "></div>
+                <div class="formError ml-3 -mt-4 text-[0.65rem] text-red-500 "></div>
 
                 <input type="email" name="email" id="email" placeholder="E-mail"
-                    class="text-xs sm:text-sm md:text-md px-2 py-1 ml-2 border-b-2 border-b-gray-400 w-[130%] lg:w-[150%] m-4 h-8 hover:border-b-2 hover:border-b-blue-700 focus:outline-none focus:border-blue-700 focus:bg-blue-100 transition-colors duration-500 hover:rounded-md focus:rounded-md bg-gray-100  "
+                    class="text-xs sm:text-sm md:text-md px-2 py-1 ml-0 border-b-2 border-b-gray-400 w-full m-4 h-8 hover:border-b-2 hover:border-b-blue-700 focus:outline-none focus:border-blue-700 focus:bg-blue-100 transition-colors duration-500 hover:rounded-md focus:rounded-md bg-gray-100  "
                     required>
-                <div class="formError ml-3 -mt-4 text-xs text-red-500 "></div>
+                <div class="formError ml-3 -mt-4 text-[0.65rem] text-red-500 "></div>
+
                 <input type="tel" name="phone" id="phone" placeholder="Mobile No."
-                    class="text-xs sm:text-sm md:text-md px-2 py-1 ml-2 border-b-2 border-b-gray-400 w-[130%] lg:w-[150%] m-4 h-8 hover:border-b-2 hover:border-b-blue-700 focus:outline-none focus:border-blue-700 focus:bg-blue-100 transition-colors duration-500 hover:rounded-md focus:rounded-md bg-gray-100  "
+                    class="text-xs sm:text-sm md:text-md px-2 py-1 ml-0 border-b-2 border-b-gray-400 w-full m-4 h-8 hover:border-b-2 hover:border-b-blue-700 focus:outline-none focus:border-blue-700 focus:bg-blue-100 transition-colors duration-500 hover:rounded-md focus:rounded-md bg-gray-100  "
                     required>
-                <div class="formError ml-3 -mt-4 text-xs text-red-500 "></div>
+                <div class="formError ml-3 -mt-4 text-[0.65rem] text-red-500 "></div>
 
                 <input type="password" name="password" id="password" placeholder="Create Password"
-                    class="text-xs sm:text-sm md:text-md px-2 py-1 ml-2 border-b-2 border-b-gray-400 w-[130%] lg:w-[150%] m-4 h-8 hover:border-b-2 hover:border-b-blue-700 focus:outline-none focus:border-blue-700 focus:bg-blue-100 transition-colors duration-500 hover:rounded-md focus:rounded-md bg-gray-100  "
+                    class="text-xs sm:text-sm md:text-md px-2 py-1 ml-0 border-b-2 border-b-gray-400 w-full m-4 h-8 hover:border-b-2 hover:border-b-blue-700 focus:outline-none focus:border-blue-700 focus:bg-blue-100 transition-colors duration-500 hover:rounded-md focus:rounded-md bg-gray-100  "
                     required>
-                <div class="formError   ml-3 -mt-4 text-xs text-red-500"></div>
+                <div class="formError ml-3 -mt-4 text-[0.65rem] text-red-500"></div>
 
                 <input type="password" name="cpwd" id="cpwd" placeholder="Confirm Password"
-                    class="text-xs sm:text-sm md:text-md px-2 py-1 ml-2 border-b-2 border-b-gray-400 w-[130%] lg:w-[150%] m-4 h-8 hover:border-b-2 hover:border-b-blue-700 focus:outline-none focus:border-blue-700 focus:bg-blue-100 transition-colors duration-500 hover:rounded-md focus:rounded-md bg-gray-100  "
+                    class="text-xs sm:text-sm md:text-md px-2 py-1 ml-0 border-b-2 border-b-gray-400 w-full m-4 h-8 hover:border-b-2 hover:border-b-blue-700 focus:outline-none focus:border-blue-700 focus:bg-blue-100 transition-colors duration-500 hover:rounded-md focus:rounded-md bg-gray-100  "
                     required>
-                <div class="formError   ml-3 -mt-4 text-xs text-red-500 "></div>
+                <div class="formError ml-3 -mt-4 text-[0.65rem] text-red-500 "></div>
 
 
-                <div id="checkbox" class="mt-4 ml-2">
+                <div id="showpwddiv" class="mt-4">
+                    <input type="checkbox" name="showpwd" id="showpwd"
+                        class="w-5 m-1 -pr-2 relative left-[1.5px] top-[0.5px]">
+                    <span class="text-xs" id="showtext">
+                        Show password
+                    </span>
+                </div>
+                <div id="checkbox" class="mt-4">
                     <span id="alert" class="m-1 -pr-2 rounded-md">
-                        <input type="checkbox" name="terms" id="terms" class="w-5 m-0 relative left-[1.5px] top-[0.5px]" checked>
+                        <input type="checkbox" name="terms" id="terms" class="w-5 m-0 relative left-[1.5px] top-[0.5px]"
+                            checked>
                     </span>
                     <span class="text-xs">
                         I agree to
@@ -67,7 +76,7 @@
                     </span>
                 </div>
                 <button type="submit"
-                    class="m-5 mb-7 w-1/2 px-4 pt-1 pb-2 outline-none shadow-md shadow-gray-500 cursor-pointer relative left-14 lg:left-20 rounded-xl hover:scale-110 transition-transform duration-500 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white">Sign
+                    class="m-5 mb-7 w-[150px] px-4 pt-1 pb-2 outline-none shadow-md shadow-gray-500 cursor-pointer relative left-14 lg:left-20 rounded-xl hover:scale-110 transition-transform duration-500 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white">Sign
                     Up
                 </button>
 
@@ -80,6 +89,31 @@
     </div>
 
     <script>
+        let show = document.getElementById("showpwd");
+        let showtext = document.getElementById("showtext");
+        let pwd = document.getElementById("password");
+            let cpwd = document.getElementById("cpwd");
+        show.addEventListener("click", ()=>
+        {
+            if (show.checked) {
+                pwd.type = "text";
+                cpwd.type = "text";
+                showtext.innerHTML = "Hide password";
+            }
+            else {
+                pwd.type = "password";
+                cpwd.type = "password";
+                showtext.innerHTML = "Show password";
+            }
+            
+        })
+
+        function toggle() {
+            
+
+            
+        }
+
         function clearErrors() {
             let error = document.getElementsByClassName("formError");
             for (let errors of error) {
@@ -90,7 +124,7 @@
             document.getElementsByClassName('formError')[i].innerHTML = err;
         }
 
-        
+
         function validateForm() {
             let returnval = true;
             clearErrors();
@@ -107,21 +141,41 @@
                 returnval = false;
             }
 
+            let username = document.forms["form"]["username"].value;
+            let pattspace = /\s/gi;
+            if (username.match(pattspace) != null) {
+                seterror(1, "*Username can't contain spaces!");
+                returnval = false;
+            }
+
             let phone = document.forms["form"]["phone"].value;
-            if (phone.length != 10) {
+            let pattphone = /[^0-9]/gi;
+            if (phone.match(pattphone) != null) {
+                seterror(3, "*Mobile number should only contain numeric values!");
+                returnval = false;
+            }
+            else if (phone.length != 10) {
                 seterror(3, "*Mobile no. should contain 10 digits!");
                 returnval = false;
             }
 
-            let pwd = document.forms["form"]["password"].value;
-            let cpwd = document.forms["form"]["cpwd"].value;
-            if (pwd.length < 8) {
-                seterror(4, "*Password should contain more than 8 digits!");
+            let pwdvalue = document.forms["form"]["password"].value;
+            let cpwdvalue = document.forms["form"]["cpwd"].value;
+            let pwdinput = document.getElementById("password");
+            let pwdspecial = /[^A-Za-z0-9]/g;
+            let pwdcap = /[A-Z]/g;
+            let pwdsmall = /[a-z]/g;
+            let pwdnum = /[0-9]/g;
+            if (((pwdnum.test(pwdvalue)) && (pwdspecial.test(pwdvalue)) && (pwdcap.test(pwdvalue)) && (pwdsmall.test(pwdvalue))) == false) {
+                seterror(4, "*Password must have atleast one special character, one capital, one small and one numeric !");
                 returnval = false;
             }
-            console.log(pwd);
-            console.log(cpwd);
-            if (pwd != cpwd) {
+
+            if (pwd.length < 8) {
+                seterror(4, "*Password should contain atleast 8 digits!");
+                returnval = false;
+            }
+            if (pwdvalue != cpwdvalue) {
                 seterror(5, "*Passwords don't match!");
                 returnval = false;
             }
@@ -133,9 +187,8 @@
                 box.classList.add("border-2", "border-red-600");
                 returnval = false;
             }
-            else
-            {
-                box.classList.remove("border-2","border-red-600");
+            else {
+                box.classList.remove("border-2", "border-red-600");
             }
             return returnval
         }
