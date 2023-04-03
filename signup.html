@@ -29,24 +29,24 @@
                 class="form  flex flex-col relative bottom-5 w-[280px] md:w-[300px] lg:w-[350px]" method="post">
 
                 <input type="text" name="name" id="name" placeholder="Name"
-                    class="text-xs sm:text-sm md:text-md px-2 py-1 ml-0 border-b-2 border-b-gray-400 w-full m-4 h-8 mt-6 hover:border-b-2 hover:border-b-blue-700 focus:outline-none focus:border-blue-700 focus:bg-blue-100 transition-colors duration-500 hover:rounded-md focus:rounded-md bg-gray-100  "
+                    class="text-xs sm:text-sm md:text-md px-2 py-1 ml-0 border-b-2 border-b-gray-400 w-full m-4 h-8  hover:border-b-2 hover:border-b-blue-700 focus:outline-none focus:border-blue-700 focus:bg-blue-100 transition-colors duration-500 hover:rounded-md focus:rounded-md bg-gray-100  "
                     required>
-                <div class="formError ml-3 text-[0.65rem] -mt-4 text-red-500 "></div>
+                <div class="formError ml-3 text-[0.65rem] -mt-4 text-red-500 h-2"></div>
 
                 <input type="text" name="username" id="username" placeholder="Username"
                     class="text-xs sm:text-sm md:text-md px-2 py-1 ml-0 border-b-2  border-b-gray-400 m-4 h-8 w-full hover:border-b-2 hover:border-b-blue-700 focus:outline-none focus:border-blue-700 focus:bg-blue-100 transition-colors duration-500 hover:rounded-md focus:rounded-md bg-gray-100 "
                     required>
-                <div class="formError ml-3 -mt-4 text-[0.65rem] text-red-500 "></div>
+                <div class="formError ml-3 -mt-4 text-[0.65rem] text-red-500 h-2"></div>
 
                 <input type="email" name="email" id="email" placeholder="E-mail"
                     class="text-xs sm:text-sm md:text-md px-2 py-1 ml-0 border-b-2 border-b-gray-400 w-full m-4 h-8 hover:border-b-2 hover:border-b-blue-700 focus:outline-none focus:border-blue-700 focus:bg-blue-100 transition-colors duration-500 hover:rounded-md focus:rounded-md bg-gray-100  "
                     required>
-                <div class="formError ml-3 -mt-4 text-[0.65rem] text-red-500 "></div>
+                <div class="formError ml-3 -mt-4 text-[0.65rem] text-red-500 h-2"></div>
 
                 <input type="tel" name="phone" id="phone" placeholder="Mobile No."
                     class="text-xs sm:text-sm md:text-md px-2 py-1 ml-0 border-b-2 border-b-gray-400 w-full m-4 h-8 hover:border-b-2 hover:border-b-blue-700 focus:outline-none focus:border-blue-700 focus:bg-blue-100 transition-colors duration-500 hover:rounded-md focus:rounded-md bg-gray-100  "
                     required>
-                <div class="formError ml-3 -mt-4 text-xs text-red-500 "></div>
+                <div class="formError ml-3 -mt-4 text-xs text-red-500 h-2"></div>
 
                 <div
                     class="pwd flex items-center border-b-2 border-b-gray-400 focus:bg-blue-100 transition-colors duration-500 hover:rounded-md hover:border-b-blue-700">
@@ -55,7 +55,7 @@
                         required>
                     <i class="fas fa-eye-slash text-lg relative top-2 right-2 z-10" id="eye1"></i>
                 </div>
-                <div class="formError ml-3 text-[0.65rem] text-red-500"></div>
+                <div class="formError ml-3 text-[0.65rem] text-red-500 h-2"></div>
 
                 <div
                     class="pwd flex items-center border-b-2 border-b-gray-400 focus:bg-blue-100 transition-colors duration-500 hover:rounded-md hover:border-b-blue-700 relative mt-1">
@@ -64,7 +64,7 @@
                         required>
                     <i class="fas fa-eye-slash text-lg relative top-2 right-2 z-10" id="eye2"></i>
                 </div>
-                <div class="formError ml-3 text-[0.65rem] text-red-500 "></div>
+                <div class="formError ml-3 text-[0.65rem] text-red-500 h-2"></div>
 
                 <div id="checkbox" class="mt-6">
                     <span id="alert" class="m-1 -pr-2 rounded-md">
@@ -156,9 +156,9 @@
             }
 
             let username = document.forms["form"]["username"].value;
-            let pattspace = /\s/gi;
-            if (username.match(pattspace) != null) {
-                seterror(1, "*Username can't contain spaces!");
+            let unamepatt = /[^\w]/g;
+            if (username.match(unamepatt) != null) {
+                seterror(1, "Username can only contain numbers, alphabet and underscore(_)");
                 returnval = false;
                 errors++;
             }
